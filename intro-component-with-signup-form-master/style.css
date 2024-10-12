@@ -36,6 +36,7 @@ div.content h2{
     font-weight: 300;
 }
 
+
 div.userInput{
     display: flex;
     flex-flow: column;
@@ -59,21 +60,139 @@ input{
     -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
+position: relative;
+margin-top: -10px;
+outline: none;
 
 }
 input.text{
     padding-left: 5px;
     color: black;
     border: hsl(246, 25%, 77%) 2px solid;
+    
 }
 input[type="submit"]{
     background-color: hsl(154, 59%, 51%);
     border-color: transparent;
+    cursor: pointer;
 }
+
+div.userInput p{
+
+
+    position: absolute;
+    margin-top: -100000000px;
+
+}
+
+div.userInput p.error{
+    position: relative;
+    color: hsl(0, 100%, 74%) ;
+    font-size: 10px;
+    text-align: right;
+    margin-right: 50px;
+    margin-top: -10px;
+}
+
+
 
 footer{
     color: black;
     font-size: 15px;
     width: 300px;
     
+}
+
+@media screen and (min-width:769px) {
+    
+
+div.content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: .5fr 2fr .75fr;
+    /* gap: 20px; */
+    grid-column-gap: 50px;
+    grid-template-areas: 
+    
+    ". h2 h2"
+    "text userInput userInput"
+    ". userInput userInput"
+    ;
+
+}
+
+div.content h2{
+    grid-area: h2;
+    width: 100%;
+    font-size: 18px;
+    height: 50px;
+    padding-top: 10px;
+    /* width: 500px; */
+    /* font-size: 20px; */
+}
+
+div.text{
+    /* display: grid; */
+    grid-area: text;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-flow: column;
+    text-align: left;
+    margin: 0 auto;
+}
+
+div.text p{
+    font-size: 15px;
+    width: 475px;
+}
+
+div.userInput{
+
+    grid-area: userInput;
+    width: 500px;
+    padding-top: 20px;
+}
+
+input{
+    width: 450px;
+}
+
+
+div.userInput p.error{
+    position: relative;
+    color: hsl(0, 100%, 74%) ;
+    font-size: 10px;
+    text-align: right;
+    margin-right: -50px;
+    margin-top: -10px;
+}
+
+div.userInput input.error{
+
+    border: 2px solid hsl(0, 100%, 74%);
+    background-image: url(/images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
