@@ -103,6 +103,15 @@ footer{
     
 }
 
+div.userInput input.error{
+
+    border: 2px solid hsl(0, 100%, 74%);
+    background-image: url(/images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+
+}
+
 @media screen and (min-width:769px) {
     
 
@@ -120,6 +129,8 @@ div.content{
     ;
 
 }
+
+
 
 div.content h2{
     grid-area: h2;
